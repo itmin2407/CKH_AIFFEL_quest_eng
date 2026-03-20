@@ -1,8 +1,22 @@
 # BabyCoach PoC (LangGraph + FastAPI)
 
 ## 프로젝트 개요
-BabyCoach PoC는 부모가 아기 상태를 빠르게 체크하면, LangGraph 오케스트레이션 흐름을 통해 `Nutrition / Play / Interaction / Epigenetic / Growth / Ranker / Nudge / Explanation` 단계의 추천을 생성합니다.  
-추가로 단일 `BabyCoach` 챗봇 인터페이스가 추천 결과를 바탕으로 `/chat`에서 대화 응답을 제공합니다.
+-  아기의 이유식(영양)·놀이·상호작용 환경이 발달에 미치는 영향을 후성유전학적 관점에서 해석하고,
+- 환경과 발달의 연결을 기반으로 부모가 더 나은 육아 환경을 설계하고 실천하도록 넛지하는 후성유전학 기반 멀티모달 육아 코칭 에이전트 PoC 개발을 목적으로 함
+- 구체적 BabyCoach PoC는 부모가 아기 상태를 빠르게 체크하면, LangGraph 오케스트레이션 흐름을 통해 `Nutrition / Play / Interaction / Epigenetic / Growth / Ranker / Nudge / Explanation` 단계의 추천을 생성합니다.  
+- 추가로 단일 `BabyCoach` 챗봇 인터페이스가 추천 결과를 바탕으로 `/chat`에서 대화 응답을 제공합니다.
+
+#### 후성유전학이 보는 초기 양육
+- 후성유전학은 DNA 염기서열을 바꾸지 않고, DNA 메틸화·히스톤 수식·miRNA 등으로 유전자 발현을 “켜고 끄는” 분자 메커니즘으로
+- 디지털테라퓨틱스(DTx) 분야에서는 이론적 배경으로 자리잡고 있음.
+- 특히 임신기와 영유아기(생애 초기 수년)는 이런 후성유전적 변화에 가장 민감한 시기이기 때문에, 
+- 이때의 환경이 평생의 뇌 기능·행동·질병 취약성을 프로그래밍한다는 관점이 정설임.
+- 그러나 기존 Rule base 기반의 영유아 코칭 프로그램에서는 이를 담을 수 없는 한계를 Agentic AI를 도입하여 극복하고자 PoC를 실험함
+
+#### 1차 구현된 모습
+![image](./image/20260320_154103.png)
+![image](./image/20260320_154113.png)
+![image](./image/20260320_154132.png)
 
 ## 가장 먼저 확인 (키 없이 실행)
 이 PoC는 `.env`에 `OPENAI_API_KEY`가 없어도 최소 동작을 확인할 수 있도록 기본이 `BABYCOACH_LLM_MOCK=1` 모드로 동작합니다.  
